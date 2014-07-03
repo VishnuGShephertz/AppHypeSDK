@@ -22,8 +22,6 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Keys for test server
-	
 			AppHypeAPI
 			.intialize(
 					this,
