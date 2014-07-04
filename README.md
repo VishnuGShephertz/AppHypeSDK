@@ -10,7 +10,7 @@ AppHypeSDK
 
 # Running Ad Sample 
 
-1. [Register(http://50.112.109.96:8080/login) with AppHype platform.
+1. [Register](http://50.112.109.96:8080/login) with AppHype platform.
 2. If you are already registered, login to [AppHype] (http://50.112.109.96:8080/login/index).
 3. After Successfull login create an Android App by providing app details.
 4. Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
