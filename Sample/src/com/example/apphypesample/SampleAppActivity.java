@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.painless.pc.R;
+import com.creativemobile.dragracingbe.R;
 import com.shephertz.android.apphype.sdk.AppHypeAPI;
 import com.shephertz.android.apphype.sdk.AppHypeAPI.AppHypeListener;
 import com.shephertz.android.apphype.sdk.FullScreenAd;
@@ -85,6 +85,7 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 
 	@Override
 	public void onFailedToShow(String message) {
+		System.out.println(message);
 		SampleAppActivity.this.displayError(message);
 	}
 	@Override
