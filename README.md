@@ -1,7 +1,7 @@
 AppHypeSDK
 ==========
 
-# About AppHype Ad Sdk 
+# About AppHype Ad SDK
 
 1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads.
 2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see.
@@ -103,7 +103,7 @@ Showing an Ad on an event: If you want to show it on an event then you can use t
 			VideoAd.show(Activty);
 				
 ```
-__7 Handling AppHype Callback Events__If you want to track an event or a message from SDK, you can implement AppHypeListener
+__7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can implement AppHypeListener
 
 ``` 
     //Callback when Ad is shown
