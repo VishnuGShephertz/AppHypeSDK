@@ -25,10 +25,10 @@ A. Replace Apphype-Api-Keys and Apphype-Secret-Keys that you have received in st
 
 # Android AppHype SDK Integration
 
-__1 Download AppHype SDK __ Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+__1 Download AppHype SDK__ Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
 
 
-__2 Modify Android Manifest  __ 
+__2 Modify Android Manifest__ 
 Add permissions 
 ```
  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -55,7 +55,7 @@ Add Receiver
         </receiver>
 ```
 
-__3 Intialize AppHype SDK __ In your Launcher Activty Intialize AppHype SDK by providing your Api and Secret keys.If you want to receive CallBack event implements AppHypeListener in intialization 
+__3 Intialize AppHype SDK__ In your Launcher Activty Intialize AppHype SDK by providing your Api and Secret keys.If you want to receive CallBack event implements AppHypeListener in intialization 
 ```
 AppHypeAPI
 			.intialize(
