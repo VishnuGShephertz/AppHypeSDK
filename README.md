@@ -8,7 +8,8 @@ AppHypeSDK
 2. AppHype SDK also provide developer to earn as much money by serving desired Ad that an Mobile user is willing to see.
 3. AppHype SDK also provide a way for Advertiser to serve thier Ad to appropriate user.
 
-Running Ad Sample
+# Running Ad Sample 
+
 1. [Register(http://50.112.109.96:8080/login) with AppHype platform.
 2. If you are already registered, login to [AppHype] (http://50.112.109.96:8080/login/index).
 3. After Successfull login create an Android App by providing app details.
@@ -25,10 +26,10 @@ A. Replace Apphype-Api-Keys and Apphype-Secret-Keys that you have received in st
 
 # Android AppHype SDK Integration
 
-__1 Download AppHype SDK __ Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+__1 Download AppHype SDK__ Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
 
 
-__2 Modify Android Manifest  __ 
+__2 Modify Android Manifest__ 
 Add permissions 
 ```
  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -55,7 +56,7 @@ Add Receiver
         </receiver>
 ```
 
-__3 Intialize AppHype SDK __ In your Launcher Activty Intialize AppHype SDK by providing your Api and Secret keys.If you want to receive CallBack event implements AppHypeListener in intialization 
+__3 Intialize AppHype SDK__ In your Launcher Activty Intialize AppHype SDK by providing your Api and Secret keys.If you want to receive CallBack event implements AppHypeListener in intialization 
 ```
 AppHypeAPI
 			.intialize(
