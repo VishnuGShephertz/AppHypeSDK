@@ -3,32 +3,32 @@ AppHypeSDK
 
 # AppHype Ad SDK Version 1.0
 
+1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads.
+2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see.
+3. Offers a solution to the Advertiser by showcasing their Ads to an app user.
 
-1. AppHype Ad SDK creates as easy gateway for  Android developers to server quality Video as well as FullScreen Ads
-2. AppHype SDK also provide developer to earn as much money by serving desired Ad that an Mobile user is willing to see.
-3. AppHype SDK also provide a way for Advertiser to serve thier Ad to appropriate user.
+# Running Ad Sample
 
-Running Ad Sample
-1. [Register(http://50.112.109.96:8080/login) with AppHype platform.
+1. [Register](http://50.112.109.96:8080/login) with AppHype platform.
 2. If you are already registered, login to [AppHype] (http://50.112.109.96:8080/login/index).
-3. After Successfull login create an Android App by providing app details.
-4. Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
-5. import the Sample Application in Eclipse from SDK.
-5. Open SampleAppActivity.java file of sample project and make following changes.
+3. 3. After you have successfully logged in, create an Android App by entering app details.
+4. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+5. Import the Sample Application in Eclipse from SDK.
+5. Open the SampleAppActivity.java file of sample project and make the following changes.
 
 ```
 A. Replace Apphype-Api-Keys and Apphype-Secret-Keys that you have received in step 2 or 3 at line number 28 and 29.
 
 ```
-6. Build your android application and run on your android device.
-7. Now you are able to get Ad in your Sample Application by making Ad request.
+6. Build your Android Application and run it on your device.
+7. Now, you will be able to see Ads in your Sample Application by making an Ad request
 
 # Android AppHype SDK Integration
 
-__1 Download AppHype SDK __ Download the AppHype Android  from [here] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+__1 Download AppHype [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)__
 
 
-__2 Modify Android Manifest  __ 
+__2 Modify Android Manifest__ 
 Add permissions 
 ```
  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -55,7 +55,7 @@ Add Receiver
         </receiver>
 ```
 
-__3 Intialize AppHype SDK __ In your Launcher Activty Intialize AppHype SDK by providing your Api and Secret keys.If you want to receive CallBack event implements AppHypeListener in intialization 
+__3 Intialize AppHype SDK__ At your Launcher Activty intialize AppHype SDK by providing your Api and Secret key.If you want to receive a CallBack event implement AppHypeListener during intialization 
 ```
 AppHypeAPI
 			.intialize(
@@ -65,47 +65,45 @@ AppHypeAPI
 					new AppHypeListener() );
 ```
 
-__4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs 
+__4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
 
 ```
 AppHypeAPI.enableLogs();
 
 ```
-__5 Set Max App Launch without Ad__ You can also set Maximum no of application launch untill you not want any Ads in you application ,
-This is interesting feature to engage user with app.
-
+__5 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
 ```
 AppHypeAPI.setLaunchNoAd(maxLaunch);
 
 ```
 
-__6 FullScreen Ad__ You can request FullScreen Ad by using
+__6 FullScreen Ad__ You can request FullScreen Ad by using the following code.
 
 ```
 FullScreenAd.load();
 
 ```
-Showing Ad on an Event : If you want to show it on An event than you can use:
+Showing an Ad on an event: If you want to show it on an event then you can use the following code.
 
 ```
   if (FullScreenAd.isAvailable()
 			FullScreenAd.show(Activty);
 				
 ```
-__7 Video Ad__ You can request Video Ad by using
+__7 Video Ad__ You can request Video Ad by using the following code.
 
 ```
 VideoAd.load();
 
 ```
-Showing Ad on an Event : If you want to show it on An event than you can use:
+Showing an Ad on an event: If you want to show it on an event then you can use the following code.
 
 ```
   if (VideoAd.isAvailable()
 			VideoAd.show(Activty);
 				
 ```
-__7 Handling AppHype Callback event__ If you want to show Automatically and want to track event or message coming from SDK side you can implements AppHypeListener
+__7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can implement AppHypeListener
 
 ``` 
     //Callback when Ad is shown
@@ -127,6 +125,9 @@ __7 Handling AppHype Callback event__ If you want to show Automatically and want
 		public abstract void onIntegrationError(String error);
 				
 ```
+
+
+
 
 
 
