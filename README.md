@@ -80,27 +80,28 @@ AppHypeAPI.setLaunchNoAd(maxLaunch);
 __6 FullScreen Ad__ You can request FullScreen Ad by using the following code.
 
 ```
-FullScreenAd.load();
+AppHypeAPI.loadFullScreenAd();
 
 ```
 Showing an Ad on an event: If you want to show it on an event then you can use the following code.
 
 ```
-  if (FullScreenAd.isAvailable()
-			FullScreenAd.show(Activty);
+  if(AppHypeAPI.isFullScreenAvailable())
+		AppHypeAPI.showFullScreenAd(activity);
 				
 ```
 __7 Video Ad__ You can request Video Ad by using the following code.
 
 ```
-VideoAd.load();
+AppHypeAPI.loadVideoAd()
 
 ```
 Showing an Ad on an event: If you want to show it on an event then you can use the following code.
 
 ```
-  if (VideoAd.isAvailable()
-			VideoAd.show(Activty);
+   if(AppHypeAPI.isVideoAvailable())
+		AppHypeAPI.showVideoAd(activity);
+				
 				
 ```
 __7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can implement AppHypeListener
