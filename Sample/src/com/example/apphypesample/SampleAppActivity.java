@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.painless.pc.R;
 import com.shephertz.android.apphype.sdk.AppHypeAPI;
+
 import com.shephertz.android.apphype.sdk.AppHypeAPI.AppHypeListener;
 import com.shephertz.android.apphype.sdk.FullScreenAd;
 import com.shephertz.android.apphype.sdk.VideoAd;
@@ -22,8 +23,6 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Keys for test server
-	
 			AppHypeAPI
 			.intialize(
 					this,
@@ -36,14 +35,14 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	
 
 	public void onFullScreenLoad(View view) {
-		FullScreenAd.load();
+	AppHypeAPI.loadFullScreenAd();
 	}
 	public void onVideoLoad(View view) {
-		VideoAd.load();
+		AppHypeAPI.loadVideoAd();
 	}
 	public final void onFullScreenShow(View view) {
-		if(!FullScreenAd.isAvailable())
-		FullScreenAd.show(this);
+		if(AppHypeAPI.isFullScreenAvailable())
+		AppHypeAPI.showFullScreenAd(this);
 		
 	}
 
@@ -65,8 +64,8 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 
 	public void onVideoShow(View view) {
 
-		if (VideoAd.isAvailable()) {
-			VideoAd.show(this);
+		if (AppHypeAPI.isVideoAvailable()) {
+			AppHypeAPI.showVideoAd(this);
 		}
 	}
 
@@ -116,19 +115,19 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				if (FullScreenAd.isAvailable() && notify) {
+				if (AppHypeAPI.isFullScreenAvailable() && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"FullScreen ad is available.You can show it",
 							Toast.LENGTH_SHORT).show();
 					if(isFullScreenAuto)
-					FullScreenAd.show(SampleAppActivity.this);
+						AppHypeAPI.showFullScreenAd(SampleAppActivity.this);;
 				} 
-				else if (VideoAd.isAvailable() && notify) {
+				else if (AppHypeAPI.isVideoAvailable() && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"Video ad is available, You can show it",
 							Toast.LENGTH_SHORT).show();
 					if(isVideoAuto)
-					VideoAd.show(SampleAppActivity.this);
+						AppHypeAPI.showVideoAd(SampleAppActivity.this);
 				}
 			}
 		});
