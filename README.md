@@ -61,14 +61,26 @@ AppHypeAPI
 			.intialize(
 					this,
 					"<Apphype Api Keys>",
-					"Apphype Secret Key",
-					new AppHypeListener() );
+					"Apphype Secret Key");
 ```
 
 __4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
 
 ```
 AppHypeAPI.enableLogs();
+
+```
+__4 Add AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
+
+```
+AppHypeAPI.addAppHypeListener(appHypeLister);
+
+```
+
+__4 Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
+
+```
+AppHypeAPI.removeAppHypeListener();
 
 ```
 __5 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
@@ -104,8 +116,7 @@ Showing an Ad on an event: If you want to show it on an event then you can use t
 				
 				
 ```
-__7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can implement AppHypeListener
-
+__7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     //Callback when Ad is shown
     public abstract void onShow(String paramString);
