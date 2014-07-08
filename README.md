@@ -70,17 +70,17 @@ __4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
 AppHypeAPI.enableLogs();
 
 ```
-__4 Add AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
+__4 Set AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
 
 ```
-AppHypeAPI.addAppHypeListener(appHypeLister);
+AppHypeAPI.setAppHypeListener(appHypeLister);
 
 ```
 
-__4 Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
+__4 Reset\Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
 
 ```
-AppHypeAPI.removeAppHypeListener();
+AppHypeAPI.resetAppHypeListener();
 
 ```
 __5 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
