@@ -10,10 +10,7 @@ import android.widget.Toast;
 
 import com.painless.pc.R;
 import com.shephertz.android.apphype.sdk.AppHypeAPI;
-
 import com.shephertz.android.apphype.sdk.AppHypeAPI.AppHypeListener;
-import com.shephertz.android.apphype.sdk.FullScreenAd;
-import com.shephertz.android.apphype.sdk.VideoAd;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
 	private boolean isFullScreenAuto = true;
@@ -23,7 +20,7 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		AppHypeAPI.addAppHypeListener(this);
+		AppHypeAPI.setAppHypeListener(this);
 			AppHypeAPI
 			.intialize(
 					this,
