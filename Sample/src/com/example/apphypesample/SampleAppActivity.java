@@ -23,12 +23,12 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		AppHypeAPI.addAppHypeListener(this);
 			AppHypeAPI
 			.intialize(
 					this,
 					"<Apphype Api Keys>",
-					"Apphype Secret Key",
-					this);
+					"Apphype Secret Key");
 		AppHypeAPI.enableLogs();
 		setContentView(R.layout.activity_main);
 	}
