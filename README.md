@@ -70,26 +70,26 @@ __4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
 AppHypeAPI.enableLogs();
 
 ```
-__4 Set AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
+__5 Set AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
 
 ```
 AppHypeAPI.setAppHypeListener(appHypeLister);
 
 ```
 
-__4 Reset\Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
+__6 Reset\Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
 
 ```
 AppHypeAPI.resetAppHypeListener();
 
 ```
-__5 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
+__7 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
 ```
 AppHypeAPI.setLaunchNoAd(maxLaunch);
 
 ```
 
-__6 FullScreen Ad__ You can request FullScreen Ad by using the following code.
+__8 FullScreen Ad__ You can request FullScreen Ad by using the following code.
 
 ```
 AppHypeAPI.loadFullScreenAd();
@@ -109,7 +109,7 @@ Close FullScreen Ad: If you want to close this by using Api you can use followin
 	AppHypeAPI.closeFullScreenAd();
 				
 ```
-__7 Video Ad__ You can request Video Ad by using the following code.
+__9 Video Ad__ You can request Video Ad by using the following code.
 
 ```
 AppHypeAPI.loadVideoAd()
@@ -130,7 +130,7 @@ Close Video Ad: If you want to close this by using Api you can use following cod
 	AppHypeAPI.closeVideoAd();
 				
 ```
-__8 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
+__10 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
