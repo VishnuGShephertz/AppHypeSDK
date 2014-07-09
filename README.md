@@ -95,11 +95,18 @@ __6 FullScreen Ad__ You can request FullScreen Ad by using the following code.
 AppHypeAPI.loadFullScreenAd();
 
 ```
-Showing an Ad on an event: If you want to show it on an event then you can use the following code.
+Show FullScreen Ad: If you want to show it on an event then you can use the following code.
 
 ```
   if(AppHypeAPI.isFullScreenAvailable())
 		AppHypeAPI.showFullScreenAd(activity);
+				
+```
+Close FullScreen Ad: If you want to close this by using Api you can use following code.
+
+```
+
+	AppHypeAPI.closeFullScreenAd();
 				
 ```
 __7 Video Ad__ You can request Video Ad by using the following code.
@@ -108,7 +115,7 @@ __7 Video Ad__ You can request Video Ad by using the following code.
 AppHypeAPI.loadVideoAd()
 
 ```
-Showing an Ad on an event: If you want to show it on an event then you can use the following code.
+Show Video Ad: If you want to show it on an event then you can use the following code.
 
 ```
    if(AppHypeAPI.isVideoAvailable())
@@ -116,25 +123,34 @@ Showing an Ad on an event: If you want to show it on an event then you can use t
 				
 				
 ```
-__7 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
+Close Video Ad: If you want to close this by using Api you can use following code.
+
+```
+
+	AppHypeAPI.closeVideoAd();
+				
+```
+__8 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
-    //Callback when Ad is shown
-    public abstract void onShow(String paramString);
-    
+    public interface AppHypeListener
+   //Callback when Ad is shown
+    public void onShow(String paramString);
+
     //Callback when Ad is hide
-		public abstract void onHide(String paramString);
-		
+        public void onHide(String paramString);
+
    //Callback when Ad is Failed to show
-		public abstract void onFailedToShow(String paramString);
-		
+        public void onFailedToShow(String paramString);
+
      //Callback when Ad is Available and you can call show function to implement Auto Show here
-		public abstract void onAdAvailable(String paramString);
+        public void onAdAvailable(String paramString);
 
     //Callback when Ad Failed to Load
-		public abstract void onFailedToLoad(String paramString);
-    
+        public abstract void onFailedToLoad(String paramString);
+
     //CallBack when there is SDK integration errors
-		public abstract void onIntegrationError(String error);
+        public void onIntegrationError(String error);
+}
 				
 ```
 
