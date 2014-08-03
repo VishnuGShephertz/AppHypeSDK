@@ -28,7 +28,7 @@ A. Replace Apphype-Api-Keys and Apphype-Secret-Keys that you have received in st
 __1 Download AppHype [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)__
 
 
-__2 Modify Android Manifest__ 
+__2 Modify Android Manifest__ Chnage the Application package name with the App Package you have created on AppHype Console on Above Step.
 Add permissions 
 ```
  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
