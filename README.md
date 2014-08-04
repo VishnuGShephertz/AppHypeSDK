@@ -40,7 +40,7 @@ Add permissions
 Add Activities
 
 ```
-  <activity android:name="com.shephertz.android.apphype.sdk.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
+  <activity android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
         <activity android:name="com.shephertz.android.apphype.sdk.VideoAdActivity" android:screenOrientation="landscape"
              android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
 ```
@@ -77,12 +77,6 @@ AppHype.setAppHypeListener(appHypeLister);
 
 ```
 
-__6 Reset\Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
-
-```
-AppHype.resetAppHypeListener();
-
-```
 __7 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
 ```
 AppHype.setLaunchTillNoAd(maxLaunch);
@@ -92,20 +86,20 @@ AppHype.setLaunchTillNoAd(maxLaunch);
 __8 Load Ad__ You can request Ad by using the following code.
 
 ```
-AppHype.loadAd(AdCode.SmartWall);
+AppHype.loadAd(AdCode.Interstitial);
 AppHype.loadAd(AdCode.Video);
 
 ```
 Show Ad: If you want to show it on an event then you can use the following code.
 
 ```
-  if(AppHype.isAdAvailable(AdCode.SmartWall))
-		AppHype.showAd(activity,AdCode.SmartWall
+  if(AppHype.isAdAvailable(AdCode.Interstitial))
+		AppHype.showAd(activity,AdCode.Interstitial
 		if(AppHype.isAdAvailable(AdCode.Video))
 		AppHype.showAd(activity,AdCode.Video);
 				
 ```
-Close FullScreen Ad: If you want to close this by using Api you can use following code.
+Close Ad: If you want to close this by using Api you can use following code.
 
 ```
 
