@@ -26,8 +26,8 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 			AppHype
 			.intialize(
 					this,
-					"fc8e500c0a9edff730302d84eb63a90b55c45ba816d83961305ef1b5eee38331",
-					"fe5d142e0e1ec9921fdc42f805100c95e4a672fd0d8e9bb7bdeb2adc2b4e3729");
+					"Your API Key",
+					"Your Secret Key");
 		AppHype.enableLogs();
 		setContentView(R.layout.activity_main);
 	}
