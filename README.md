@@ -28,7 +28,7 @@ A. Replace Apphype-Api-Keys and Apphype-Secret-Keys that you have received in st
 __1 Download AppHype [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)__
 
 
-__2 Modify Android Manifest__ 
+__2 Modify Android Manifest__ Chnage the Application package name with the App Package you have created on AppHype Console on Above Step.
 Add permissions 
 ```
  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -57,79 +57,63 @@ Add Receiver
 
 __3 Intialize AppHype SDK__ At your Launcher Activty intialize AppHype SDK by providing your Api and Secret key.If you want to receive a CallBack event implement AppHypeListener during intialization 
 ```
-AppHypeAPI
+AppHype
 			.intialize(
 					this,
-					"<Apphype Api Keys>",
+					"Apphype Api Key",
 					"Apphype Secret Key");
 ```
 
 __4 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
 
 ```
-AppHypeAPI.enableLogs();
+AppHype.enableLogs();
 
 ```
 __5 Set AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
 
 ```
-AppHypeAPI.setAppHypeListener(appHypeLister);
+AppHype.setAppHypeListener(appHypeLister);
 
 ```
 
 __6 Reset\Remove AppHypeListener__ You can also remove calback appHypeListener by using following code.
 
 ```
-AppHypeAPI.resetAppHypeListener();
+AppHype.resetAppHypeListener();
 
 ```
 __7 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
 ```
-AppHypeAPI.setLaunchNoAd(maxLaunch);
+AppHype.setLaunchTillNoAd(maxLaunch);
 
 ```
 
-__8 FullScreen Ad__ You can request FullScreen Ad by using the following code.
+__8 Load Ad__ You can request Ad by using the following code.
 
 ```
-AppHypeAPI.loadFullScreenAd();
+AppHype.loadAd(AdCode.SmartWall);
+AppHype.loadAd(AdCode.Video);
 
 ```
-Show FullScreen Ad: If you want to show it on an event then you can use the following code.
+Show Ad: If you want to show it on an event then you can use the following code.
 
 ```
-  if(AppHypeAPI.isFullScreenAvailable())
-		AppHypeAPI.showFullScreenAd(activity);
+  if(AppHype.isAdAvailable(AdCode.SmartWall))
+		AppHype.showAd(activity,AdCode.SmartWall
+		if(AppHype.isAdAvailable(AdCode.Video))
+		AppHype.showAd(activity,AdCode.Video);
 				
 ```
 Close FullScreen Ad: If you want to close this by using Api you can use following code.
 
 ```
 
-	AppHypeAPI.closeFullScreenAd();
+	AppHype.closeAd();
 				
 ```
-__9 Video Ad__ You can request Video Ad by using the following code.
 
-```
-AppHypeAPI.loadVideoAd()
-
-```
-Show Video Ad: If you want to show it on an event then you can use the following code.
-
-```
-   if(AppHypeAPI.isVideoAvailable())
-		AppHypeAPI.showVideoAd(activity);
-				
-				
-```
-Close Video Ad: If you want to close this by using Api you can use following code.
-
-```
-
-	AppHypeAPI.closeVideoAd();
-				
-```
+			
 __10 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     public interface AppHypeListener
