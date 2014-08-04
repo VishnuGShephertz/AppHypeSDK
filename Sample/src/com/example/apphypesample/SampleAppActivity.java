@@ -1,5 +1,6 @@
 package com.example.apphypesample;
 
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,10 +9,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.test.apppp.R;
 import com.shephertz.android.apphype.sdk.AppHype;
 import com.shephertz.android.apphype.sdk.AppHype.AppHypeListener;
 import com.shephertz.android.apphype.util.AdCode;
+import com.test.apppp.R;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
 	private boolean isInterstitialAuto = true;
@@ -33,13 +34,13 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	
 
 	public void onInterstitialLoad(View view) {
-	AppHype.loadAd(AdCode.Interstitial);
+	AppHype.preLoadAd(AdCode.Interstitial);
 	}
 	public void onVideoLoad(View view) {
-		AppHype.loadAd(AdCode.Video);
+		AppHype.preLoadAd(AdCode.Video);
 	}
 	public final void onInterstitialShow(View view) {
-		if(AppHype.isAdAvailable(AdCode.Interstitial))
+		if(AppHype.isAvailable(AdCode.Interstitial))
 		AppHype.showAd(this,AdCode.Interstitial);
 		
 	}
@@ -62,7 +63,7 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 
 	public void onVideoShow(View view) {
 
-		if(AppHype.isAdAvailable(AdCode.Video))
+		if(AppHype.isAvailable(AdCode.Video))
 			AppHype.showAd(this,AdCode.Video);
 	}
 
@@ -112,14 +113,14 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				if (AppHype.isAdAvailable(AdCode.Interstitial) && notify) {
+				if (AppHype.isAvailable(AdCode.Interstitial) && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"Interstitial ad is available.You can show it",
 							Toast.LENGTH_SHORT).show();
 					if(isInterstitialAuto)
 						AppHype.showAd(SampleAppActivity.this,AdCode.Interstitial);
 				} 
-				else if (AppHype.isAdAvailable(AdCode.Video) && notify) {
+				else if (AppHype.isAvailable(AdCode.Video) && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"Video ad is available, You can show it",
 							Toast.LENGTH_SHORT).show();
