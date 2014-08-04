@@ -77,9 +77,9 @@ AppHype.setAppHypeListener(appHypeLister);
 
 ```
 
-__7 Set Max App Launch without Ad__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
+__7 Restrict Ad in Application__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
 ```
-AppHype.setLaunchTillNoAd(maxLaunch);
+AppHype.restrictAd(restricLaunch);
 
 ```
 
@@ -90,16 +90,16 @@ AppHype.loadAd(AdCode.Interstitial);
 AppHype.loadAd(AdCode.Video);
 
 ```
-Show Ad: If you want to show it on an event then you can use the following code.
+__9 Show Ad__ If you want to show it on an event then you can use the following code.
 
 ```
-  if(AppHype.isAdAvailable(AdCode.Interstitial))
+  if(AppHype.isAvailable(AdCode.Interstitial))
 		AppHype.showAd(activity,AdCode.Interstitial
-		if(AppHype.isAdAvailable(AdCode.Video))
+		if(AppHype.isAvailable(AdCode.Video))
 		AppHype.showAd(activity,AdCode.Video);
 				
 ```
-Close Ad: If you want to close this by using Api you can use following code.
+__10 Close Ad__  If you want to close this by using Api you can use following code.
 
 ```
 
@@ -108,7 +108,7 @@ Close Ad: If you want to close this by using Api you can use following code.
 ```
 
 			
-__10 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
+__11 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
