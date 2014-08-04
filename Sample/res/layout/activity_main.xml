@@ -15,14 +15,14 @@
         android:background="@drawable/logo" />
 
     <Button
-        android:id="@+id/fullScreen"
+        android:id="@+id/Interstitial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/logo"
         android:layout_marginTop="5dp"
-        android:onClick="onFullScreenLoad"
-        android:text="FullScreen Ad" />
+        android:onClick="onInterstitialLoad"
+        android:text="Interstitial Ad" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -31,18 +31,18 @@
         android:layout_below="@+id/logo"
         android:layout_marginTop="5dp"
         android:checked="true"
-        android:onClick="onAutoFullScreen"
+        android:onClick="onAutoInterstitial"
         android:text="Auto Show" />
 
     <Button
-        android:id="@+id/showFullScreen"
+        android:id="@+id/showInterstitial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/fullScreen"
+        android:layout_below="@+id/Interstitial"
         android:layout_marginTop="1dp"
-        android:onClick="onFullScreenShow"
-        android:text="Show FullScreen"
+        android:onClick="onInterstitialShow"
+        android:text="Show Interstitial"
         android:visibility="gone" />
 
     <Button
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/showFullScreen"
+        android:layout_below="@+id/showInterstitial"
         android:layout_marginTop="5dp"
         android:onClick="onVideoLoad"
         android:text="Video Ad" />
@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/showFullScreen"
+        android:layout_below="@+id/showInterstitial"
         android:layout_marginTop="5dp"
         android:checked="true"
         android:onClick="onAutoVideo"

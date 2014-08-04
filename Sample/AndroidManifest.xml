@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.painless.pc"  android:versionCode="1"
+    package="com.test.apppp"  android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-   
-   
-    
+  
     <uses-permission android:name="android.permission.INTERNET" />
        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" /> 
@@ -36,7 +33,7 @@
                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
             </intent-filter>
         </receiver>
-          <activity android:name="com.shephertz.android.apphype.sdk.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
+          <activity android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
         <activity android:name="com.shephertz.android.apphype.sdk.VideoAdActivity" android:screenOrientation="landscape"
              android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
     </application>

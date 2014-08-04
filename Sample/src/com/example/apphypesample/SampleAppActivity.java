@@ -8,38 +8,39 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.painless.pc.R;
-import com.shephertz.android.apphype.sdk.AppHypeAPI;
-import com.shephertz.android.apphype.sdk.AppHypeAPI.AppHypeListener;
+import com.test.apppp.R;
+import com.shephertz.android.apphype.sdk.AppHype;
+import com.shephertz.android.apphype.sdk.AppHype.AppHypeListener;
+import com.shephertz.android.apphype.util.AdCode;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
-	private boolean isFullScreenAuto = true;
+	private boolean isInterstitialAuto = true;
 	private boolean isVideoAuto = true;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		AppHypeAPI.setAppHypeListener(this);
-			AppHypeAPI
+		AppHype.setAppHypeListener(this);
+			AppHype
 			.intialize(
 					this,
-					"<Apphype Api Keys>",
-					"Apphype Secret Key");
-		AppHypeAPI.enableLogs();
+					"fc8e500c0a9edff730302d84eb63a90b55c45ba816d83961305ef1b5eee38331",
+					"fe5d142e0e1ec9921fdc42f805100c95e4a672fd0d8e9bb7bdeb2adc2b4e3729");
+		AppHype.enableLogs();
 		setContentView(R.layout.activity_main);
 	}
 	
 
-	public void onFullScreenLoad(View view) {
-	AppHypeAPI.loadFullScreenAd();
+	public void onInterstitialLoad(View view) {
+	AppHype.loadAd(AdCode.Interstitial);
 	}
 	public void onVideoLoad(View view) {
-		AppHypeAPI.loadVideoAd();
+		AppHype.loadAd(AdCode.Video);
 	}
-	public final void onFullScreenShow(View view) {
-		if(AppHypeAPI.isFullScreenAvailable())
-		AppHypeAPI.showFullScreenAd(this);
+	public final void onInterstitialShow(View view) {
+		if(AppHype.isAdAvailable(AdCode.Interstitial))
+		AppHype.showAd(this,AdCode.Interstitial);
 		
 	}
 
@@ -50,20 +51,19 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		else
 			((Button) findViewById(R.id.showVideo)).setVisibility(View.GONE);
 	}
-	public void onAutoFullScreen(View view){
-		isFullScreenAuto=((CheckBox) view).isChecked();
-		if(!isFullScreenAuto)
-			((Button) findViewById(R.id.showFullScreen)).setVisibility(View.VISIBLE);
+	public void onAutoInterstitial(View view){
+		isInterstitialAuto=((CheckBox) view).isChecked();
+		if(!isInterstitialAuto)
+			((Button) findViewById(R.id.showInterstitial)).setVisibility(View.VISIBLE);
 		else
-			((Button) findViewById(R.id.showFullScreen)).setVisibility(View.GONE);
+			((Button) findViewById(R.id.showInterstitial)).setVisibility(View.GONE);
 	}
 	
 
 	public void onVideoShow(View view) {
 
-		if (AppHypeAPI.isVideoAvailable()) {
-			AppHypeAPI.showVideoAd(this);
-		}
+		if(AppHype.isAdAvailable(AdCode.Video))
+			AppHype.showAd(this,AdCode.Video);
 	}
 
 	@Override
@@ -112,19 +112,19 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				if (AppHypeAPI.isFullScreenAvailable() && notify) {
+				if (AppHype.isAdAvailable(AdCode.Interstitial) && notify) {
 					Toast.makeText(SampleAppActivity.this,
-							"FullScreen ad is available.You can show it",
+							"Interstitial ad is available.You can show it",
 							Toast.LENGTH_SHORT).show();
-					if(isFullScreenAuto)
-						AppHypeAPI.showFullScreenAd(SampleAppActivity.this);;
+					if(isInterstitialAuto)
+						AppHype.showAd(SampleAppActivity.this,AdCode.Interstitial);
 				} 
-				else if (AppHypeAPI.isVideoAvailable() && notify) {
+				else if (AppHype.isAdAvailable(AdCode.Video) && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"Video ad is available, You can show it",
 							Toast.LENGTH_SHORT).show();
 					if(isVideoAuto)
-						AppHypeAPI.showVideoAd(SampleAppActivity.this);
+						AppHype.showAd(SampleAppActivity.this,AdCode.Video);
 				}
 			}
 		});
