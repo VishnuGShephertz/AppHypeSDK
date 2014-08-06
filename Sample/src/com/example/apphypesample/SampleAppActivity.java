@@ -1,6 +1,5 @@
 package com.example.apphypesample;
 
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,63 +7,60 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
-
 import com.shephertz.android.apphype.sdk.AppHype;
 import com.shephertz.android.apphype.sdk.AppHype.AppHypeListener;
 import com.shephertz.android.apphype.util.AdCode;
-import com.test.apppp.R;
+import com.test.app.R;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
 	private boolean isInterstitialAuto = true;
 	private boolean isVideoAuto = true;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AppHype.setAppHypeListener(this);
-			AppHype
-			.intialize(
-					this,
-					"Your API Key",
-					"Your Secret Key");
+		AppHype.intialize(this, "Your API Key", "Your Secret Key");
 		AppHype.enableLogs();
 		setContentView(R.layout.activity_main);
 	}
-	
 
 	public void onInterstitialLoad(View view) {
-	AppHype.preLoadAd(AdCode.Interstitial);
+		AppHype.preLoadAd(AdCode.Interstitial);
 	}
+
 	public void onVideoLoad(View view) {
 		AppHype.preLoadAd(AdCode.Video);
 	}
+
 	public final void onInterstitialShow(View view) {
-		if(AppHype.isAvailable(AdCode.Interstitial))
-		AppHype.showAd(this,AdCode.Interstitial);
-		
+		if (AppHype.isAvailable(AdCode.Interstitial))
+			AppHype.showAd(this, AdCode.Interstitial);
+
 	}
 
-	public void onAutoVideo(View view){
-		isVideoAuto=((CheckBox) view).isChecked();
-		if(!isVideoAuto)
+	public void onAutoVideo(View view) {
+		isVideoAuto = ((CheckBox) view).isChecked();
+		if (!isVideoAuto)
 			((Button) findViewById(R.id.showVideo)).setVisibility(View.VISIBLE);
 		else
 			((Button) findViewById(R.id.showVideo)).setVisibility(View.GONE);
 	}
-	public void onAutoInterstitial(View view){
-		isInterstitialAuto=((CheckBox) view).isChecked();
-		if(!isInterstitialAuto)
-			((Button) findViewById(R.id.showInterstitial)).setVisibility(View.VISIBLE);
+
+	public void onAutoInterstitial(View view) {
+		isInterstitialAuto = ((CheckBox) view).isChecked();
+		if (!isInterstitialAuto)
+			((Button) findViewById(R.id.showInterstitial))
+					.setVisibility(View.VISIBLE);
 		else
-			((Button) findViewById(R.id.showInterstitial)).setVisibility(View.GONE);
+			((Button) findViewById(R.id.showInterstitial))
+					.setVisibility(View.GONE);
 	}
-	
 
 	public void onVideoShow(View view) {
 
-		if(AppHype.isAvailable(AdCode.Video))
-			AppHype.showAd(this,AdCode.Video);
+		if (AppHype.isAvailable(AdCode.Video))
+			AppHype.showAd(this, AdCode.Video);
 	}
 
 	@Override
@@ -80,35 +76,33 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	@Override
 	public void onHide(String tag) {
 	}
-	
 
 	@Override
 	public void onFailedToShow(String message) {
 		SampleAppActivity.this.displayError(message);
 	}
+
 	@Override
 	public void onIntegrationError(String error) {
 		// TODO Auto-generated method stub
 		Log.d("AppHype-Error", error);
 		displayError(error);
-		
+
 	}
-	
-	
+
 	private void displayError(final String error) {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				
-					Toast.makeText(SampleAppActivity.this,
-							error,
-							Toast.LENGTH_SHORT).show();
-					Toast.makeText(SampleAppActivity.this,
-							error,
-							Toast.LENGTH_SHORT).show();
+
+				Toast.makeText(SampleAppActivity.this, error,
+						Toast.LENGTH_SHORT).show();
+				Toast.makeText(SampleAppActivity.this, error,
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 	}
+
 	private void displayMessage(final Boolean notify) {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
@@ -117,20 +111,19 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 					Toast.makeText(SampleAppActivity.this,
 							"Interstitial ad is available.You can show it",
 							Toast.LENGTH_SHORT).show();
-					if(isInterstitialAuto)
-						AppHype.showAd(SampleAppActivity.this,AdCode.Interstitial);
-				} 
-				else if (AppHype.isAvailable(AdCode.Video) && notify) {
+					if (isInterstitialAuto)
+						AppHype.showAd(SampleAppActivity.this,
+								AdCode.Interstitial);
+				} else if (AppHype.isAvailable(AdCode.Video) && notify) {
 					Toast.makeText(SampleAppActivity.this,
 							"Video ad is available, You can show it",
 							Toast.LENGTH_SHORT).show();
-					if(isVideoAuto)
-						AppHype.showAd(SampleAppActivity.this,AdCode.Video);
+					if (isVideoAuto)
+						AppHype.showAd(SampleAppActivity.this, AdCode.Video);
 				}
 			}
 		});
 	}
-
 
 	@Override
 	public void onFailedToLoad(String message) {
@@ -138,8 +131,4 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		displayError(message);
 	}
 
-
-	
-
-	
 }
