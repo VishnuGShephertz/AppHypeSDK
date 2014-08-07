@@ -7,6 +7,11 @@ AppHypeSDK
 2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see.
 3. Offers a solution to the Advertiser by showcasing their Ads to an app user.
 
+# Getting Started with AppHype Ad Network.
+
+1. Read complete [API Documentation](http://50.112.109.96:8080/docs) on AppHype Ad Network Guide.
+2. A complete [Turtorial](http://50.112.109.96:8080/tutorial-android), How you can integrate it in your Existing Android Application.
+
 # Running Ad Sample
 
 1. [Register](http://50.112.109.96:8080/login) with AppHype platform.
