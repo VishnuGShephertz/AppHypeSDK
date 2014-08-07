@@ -1,42 +1,52 @@
 package com.example.apphypesample;
 
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Toast;
+import android.widget.TextView;
+import com.apphype.test.R;
 import com.shephertz.android.apphype.sdk.AppHype;
 import com.shephertz.android.apphype.sdk.AppHype.AppHypeListener;
 import com.shephertz.android.apphype.util.AdCode;
-import com.test.app.R;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
 	private boolean isInterstitialAuto = true;
 	private boolean isVideoAuto = true;
+	private TextView adStatus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		AppHype.setAppHypeListener(this);
+	
+		setContentView(R.layout.activity_main);
+		adStatus=(TextView)findViewById(R.id.ad_Status);
+				AppHype.setAppHypeListener(this);
 		AppHype.intialize(this, "Your API Key", "Your Secret Key");
 		AppHype.enableLogs();
-		setContentView(R.layout.activity_main);
+		adStatus.setText("intializing.....AppHype");
 	}
 
 	public void onInterstitialLoad(View view) {
+		adStatus.setText("Loading.....Interstitial Ad");
 		AppHype.preLoadAd(AdCode.Interstitial);
 	}
 
 	public void onVideoLoad(View view) {
+		adStatus.setText("Loading.....Video Ad");
 		AppHype.preLoadAd(AdCode.Video);
 	}
 
 	public final void onInterstitialShow(View view) {
-		if (AppHype.isAvailable(AdCode.Interstitial))
+		if (AppHype.isAvailable(AdCode.Interstitial)){
+		
 			AppHype.showAd(this, AdCode.Interstitial);
-
+		}
+		else
+			adStatus.setText("Interstitial Ad is not available");
+		
 	}
 
 	public void onAutoVideo(View view) {
@@ -61,63 +71,58 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 
 		if (AppHype.isAvailable(AdCode.Video))
 			AppHype.showAd(this, AdCode.Video);
+		else
+			adStatus.setText("Video Ad is not available");
+		
 	}
 
 	@Override
-	public void onAdAvailable(String tag) {
-		SampleAppActivity.this.displayMessage(true);
+	public void onAdAvailable(String response) {
+		displayResponse("onAdAvailable :  "+response);
+		displayAd();
 	}
 
 	@Override
-	public void onShow(String tag) {
-		SampleAppActivity.this.displayMessage(false);
+	public void onShow(String response) {
+		displayResponse("onShow :  "+response);
 	}
 
 	@Override
-	public void onHide(String tag) {
+	public void onHide(String response) {
+		displayResponse("onHide :  "+response);
 	}
 
 	@Override
-	public void onFailedToShow(String message) {
-		SampleAppActivity.this.displayError(message);
+	public void onFailedToShow(String response) {
+		displayResponse("onFailedToShow :  "+response);
 	}
 
 	@Override
-	public void onIntegrationError(String error) {
-		// TODO Auto-generated method stub
-		Log.d("AppHype-Error", error);
-		displayError(error);
+	public void onIntegrationError(String response) {
+		displayResponse("onFailedToShow :  "+response);
 
 	}
 
-	private void displayError(final String error) {
+	private void displayResponse(final String error) {
+		
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-
-				Toast.makeText(SampleAppActivity.this, error,
-						Toast.LENGTH_SHORT).show();
-				Toast.makeText(SampleAppActivity.this, error,
-						Toast.LENGTH_SHORT).show();
+				adStatus.setText(error);
 			}
 		});
 	}
+	
 
-	private void displayMessage(final Boolean notify) {
+	private void displayAd() {
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				if (AppHype.isAvailable(AdCode.Interstitial) && notify) {
-					Toast.makeText(SampleAppActivity.this,
-							"Interstitial ad is available.You can show it",
-							Toast.LENGTH_SHORT).show();
+				if (AppHype.isAvailable(AdCode.Interstitial)) {
 					if (isInterstitialAuto)
 						AppHype.showAd(SampleAppActivity.this,
 								AdCode.Interstitial);
-				} else if (AppHype.isAvailable(AdCode.Video) && notify) {
-					Toast.makeText(SampleAppActivity.this,
-							"Video ad is available, You can show it",
-							Toast.LENGTH_SHORT).show();
+				} else if (AppHype.isAvailable(AdCode.Video)) {
 					if (isVideoAuto)
 						AppHype.showAd(SampleAppActivity.this, AdCode.Video);
 				}
@@ -126,9 +131,8 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	}
 
 	@Override
-	public void onFailedToLoad(String message) {
-		// TODO Auto-generated method stub
-		displayError(message);
+	public void onFailedToLoad(String response) {
+		displayResponse("onFailedToLoad :  "+response);
 	}
 
 }
