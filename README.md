@@ -17,8 +17,8 @@ AppHypeSDK
 4. Create your App(s) by entering the name of your App's package to [Create App](http://50.112.109.96:8080/App42Hype/app/apps#/addApp) page.
 5. Now you can get Your [Application Keys](http://50.112.109.96:8080/App42Hype/app/apps#/all) on By clicking Key of app, that are require for Ad SDK integration.
 6. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip) with Sample Application.
-7. Change Sample Application Package with your application package in AndroidManifest.xml file created in step 4. 
-8.  Import Sample Application in Your IDE e.g Eclipse.
+7. Import Sample Application in Your IDE e.g Eclipse.
+8. Change Sample Application Package with your application package in AndroidManifest.xml file created in step 4. 
 9. Put your API as well as Secret Key in SampleAppActivity.java file,generated in step 5 at line no 24..
 
 10. Build your Android Application and run it on your device.
