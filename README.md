@@ -89,14 +89,14 @@ AppHype.restrictAd(restricLaunch);
 
 ```
 
-__8 Load Ad__ You can request Ad by using the following code.
+__8 LoadAd__ You can request Ad by using the following code.
 
 ```
-AppHype.loadAd(AdCode.Interstitial);
-AppHype.loadAd(AdCode.Video);
+AppHype.preLoadAd(AdCode.Interstitial);
+AppHype.preLoadAd(AdCode.Video);
 
 ```
-__9 Show Ad__ If you want to show it on an event then you can use the following code.
+__9 ShowAd__ If you want to show it on an event then you can use the following code.
 
 ```
   if(AppHype.isAvailable(AdCode.Interstitial))
@@ -105,7 +105,7 @@ __9 Show Ad__ If you want to show it on an event then you can use the following 
 		AppHype.showAd(activity,AdCode.Video);
 				
 ```
-__10 Close Ad__  If you want to close this by using Api you can use following code.
+__10 CloseAd__  If you want to close this by using Api you can use following code.
 
 ```
 
