@@ -6,16 +6,16 @@ AppHypeSDK
 1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads.
 2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see.
 3. Offers a solution to the Advertiser by showcasing their Ads to an app user.
-4. Read complete [API Documentation](http://50.112.109.96:8080/docs) on AppHype Ad Network Guide.
-5. A complete [Turtorial](http://50.112.109.96:8080/tutorial-android), How you can integrate it in your Existing Android Application.
+4. Read complete [API Documentation](http://apphype.shephertz.com/docs) on AppHype Ad Network Guide.
+5. A complete [Turtorial](http://apphype.shephertz.com/tutorial-android), How you can integrate it in your Existing Android Application.
 
 # Running Ad Sample
 
-1. [Register/Login](http://50.112.109.96:8080/login) with AppHype Ad Network.
-2. After signing up, Create your app that you want to promote by entering your app's package name to the [Create App](http://50.112.109.96:8080/App42Hype/app/apps#/addApp) page.
-3. Now You can create Cross Promo Campaign of this App to promote it in Other App.Create [Cross Promotion Campaign](http://50.112.109.96:8080/App42Hype/app/apps#/createPromo) page. 
-4. Create your App(s) by entering the name of your App's package to [Create App](http://50.112.109.96:8080/App42Hype/app/apps#/addApp) page.
-5. Now you can get Your [Application Keys](http://50.112.109.96:8080/App42Hype/app/apps#/all) on By clicking Key of app, that are require for Ad SDK integration.
+1. [Register/Login](http://apphype.shephertz.com/login) with AppHype Ad Network.
+2. After signing up, Create your app that you want to promote by entering your app's package name to the [Create App](http://apphype.shephertz.com/app/apps#/addApp) page.
+3. Now You can create Cross Promo Campaign of this App to promote it in Other App.Create [Cross Promotion Campaign](http://apphype.shephertz.com/app/apps#/createPromo) page. 
+4. Create your App(s) by entering the name of your App's package to [Create App](http://apphype.shephertz.com/app/apps#/addApp) page.
+5. Now you can get Your [Application Keys](http://apphype.shephertz.com/app/apps#/all) on By clicking Key of app, that are require for Ad SDK integration.
 6. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip) with Sample Application.
 7. Import Sample Application in Your IDE e.g Eclipse.
 8. Change Sample Application Package with your application package in AndroidManifest.xml file created in step 4. 
