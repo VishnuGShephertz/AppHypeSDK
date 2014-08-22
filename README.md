@@ -118,7 +118,7 @@ __11 Handling AppHype Callback Events__ If you want to track an event or a messa
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
-    public void onShow();
+    public void onShow(AdCode adCode));
 
     //Callback when Ad is hide
         public void onHide(AdCode adCode);
