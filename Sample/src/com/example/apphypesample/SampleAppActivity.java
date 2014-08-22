@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import com.apphype.test.R;
+
+import com.shephertz.android.apphype.connector.AppHypeException;
 import com.shephertz.android.apphype.sdk.AppHype;
 import com.shephertz.android.apphype.sdk.AppHype.AppHypeListener;
 import com.shephertz.android.apphype.util.AdCode;
+import com.test.app.R;
 
 public class SampleAppActivity extends Activity implements AppHypeListener {
 	private boolean isInterstitialAuto = true;
@@ -23,8 +25,8 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	
 		setContentView(R.layout.activity_main);
 		adStatus=(TextView)findViewById(R.id.ad_Status);
-				AppHype.setAppHypeListener(this);
-		AppHype.intialize(this, "Your API Key", "Your Secret Key");
+		AppHype.setAppHypeListener(this);
+		AppHype.intialize(this, "538b7d5969776e277585e9c7c934ccdfab728a61f59f15a09c2adffced1c6790", "57ff0b68f9b9c56772c76e873b7bc49155b7fd5d9799878e0166625235a64912");
 		AppHype.enableLogs();
 		adStatus.setText("intializing.....AppHype");
 	}
@@ -68,7 +70,6 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	}
 
 	public void onVideoShow(View view) {
-
 		if (AppHype.isAvailable(AdCode.Video))
 			AppHype.showAd(this, AdCode.Video);
 		else
@@ -77,33 +78,48 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	}
 
 	@Override
-	public void onAdAvailable(String response) {
-		displayResponse("onAdAvailable :  "+response);
-		displayAd();
+	public void onAdAvailable(AdCode adcode) {
+		String message="onAdAvailable :  ";
+		if(adcode==AdCode.Interstitial)
+			message+="Interstitial Ad is Available";
+		else if(adcode==AdCode.Video)
+			message+="Video Ad is Available";
+		displayMessage(message);
+		//displayAd();
 	}
 
 	@Override
-	public void onShow(String response) {
-		displayResponse("onShow :  "+response);
+	public void onShow(AdCode adcode) {
+		String message="onShow :  ";
+		if(adcode==AdCode.Interstitial)
+			message+="Interstitial Ad is showing";
+		else if(adcode==AdCode.Video)
+			message+="Video Ad is showing";
+		displayMessage(message);
 	}
 
 	@Override
-	public void onHide(String response) {
-		displayResponse("onHide :  "+response);
+	public void onHide(AdCode adcode) {
+		String message="onHide :  ";
+		if(adcode==AdCode.Interstitial)
+			message+="Interstitial Ad is Hide";
+		else if(adcode==AdCode.Video)
+			message+="Video Ad is Hide";
+		displayMessage(message);
 	}
 
 	@Override
-	public void onFailedToShow(String response) {
-		displayResponse("onFailedToShow :  "+response);
+	public void onFailedToShow(AppHypeException appHypeEx) {
+		displayMessage("onFailedToShow :  "+appHypeEx.toString());
 	}
 
 	@Override
-	public void onIntegrationError(String response) {
-		displayResponse("onFailedToShow :  "+response);
+	public void onIntegrationError(AppHypeException appHypeEx) {
+		displayMessage("onFailedToShow :  "+appHypeEx.toString());
 
 	}
 
-	private void displayResponse(final String error) {
+	private void displayMessage(final String error) {
 		
 		SampleAppActivity.this.runOnUiThread(new Runnable() {
 			@Override
@@ -131,8 +147,8 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 	}
 
 	@Override
-	public void onFailedToLoad(String response) {
-		displayResponse("onFailedToLoad :  "+response);
+	public void onFailedToLoad(AppHypeException appHypeEx) {
+		displayMessage("onFailedToLoad :  "+appHypeEx.toString());
 	}
 
 }
