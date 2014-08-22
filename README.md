@@ -118,22 +118,22 @@ __11 Handling AppHype Callback Events__ If you want to track an event or a messa
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
-    public void onShow(String paramString);
+    public void onShow(AdCode adCode);
 
     //Callback when Ad is hide
-        public void onHide(String paramString);
+        public void onHide(AdCode adCode);
 
    //Callback when Ad is Failed to show
-        public void onFailedToShow(String paramString);
+        public void onFailedToShow(AppHypeException appHypeEx);
 
      //Callback when Ad is Available and you can call show function to implement Auto Show here
-        public void onAdAvailable(String paramString);
+        public void onAdAvailable(AdCode adCode);
 
     //Callback when Ad Failed to Load
-        public abstract void onFailedToLoad(String paramString);
+        public abstract void onFailedToLoad(AppHypeException appHypeEx);
 
-    //CallBack when there is SDK integration errors
-        public void onIntegrationError(String error);
+    //CallBack when there is SDK integration exception
+        public void onIntegrationError(AppHypeException appHypeEx);
 }
 				
 ```
