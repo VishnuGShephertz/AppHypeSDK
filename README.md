@@ -36,33 +36,20 @@ AppHypeSDK
 
 
 ```
-								 //Add Android Permissions
-		    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
-    <uses-permission
-													android:name="android.permission.ACCESS_NETWORK_STATE">
-    </uses-permission>
-    <uses-permission
-													android:name="android.permission.ACCESS_FINE_LOCATION">
-    </uses-permission>
-    <uses-permission
-													android:name="android.permission.ACCESS_COARSE_LOCATION">
-    </uses-permission>
+		/Add Android Permissions
+		<uses-permission android:name="android.permission.INTERNET"/> 
+                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+                <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> 
+                <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 	
-    //Add Android Activities
-    <activity
-													android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity"
-													android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize">
-    </activity>
-    <activity
-													android:name="com.shephertz.android.apphype.sdk.VideoAdActivity"
-													android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"
-													android:screenOrientation="landscape">
-    </activity>
+         //Add Android Activities
+    <activity android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity						android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"/>
+    <activity android:name="com.shephertz.android.apphype.sdk.VideoAdActivity"
+     android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"
+    android:screenOrientation="landscape" />
 	
     //Add Android Receiver
-    <receiver
-													android:name="com.shephertz.android.apphype.sdk.AppHypeReceiver">
+    <receiver android:name="com.shephertz.android.apphype.sdk.AppHypeReceiver">
         <intent-filter>
             <data android:scheme="package" />
             <action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -73,11 +60,7 @@ AppHypeSDK
 
 4. Initialize AppHype SDK with the application Keys of the App in which you are cross promoting
 ```
-AppHype
-			.intialize(
-					this,
-					"Apphype Api Key",
-					"Apphype Secret Key");
+AppHype.intialize("Android application context","Apphype Api Key","Apphype Secret Key");
 ```
 
 5. To enable logs in application
@@ -118,9 +101,7 @@ AppHype.preLoadAd(AdCode.Video);
 10. Developer can close Ad with API as well
 
 ```
-
 	AppHype.closeAd();
-				
 ```
 
 			
