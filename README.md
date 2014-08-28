@@ -26,42 +26,52 @@ AppHypeSDK
 
 
 
-1. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+1. Download  [AppHype Android SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
 
 2. Add apphype.jar and android-support-v4.jar in your application
 
 3. In AndroidManifest.xml file, package name of your App and the App added on AppHype in which you wish to cross promote should be same
 
-__3 Modify Android Manifest__ Change Your Application Package with your application package in AndroidManifest.xml file created in step 4 also add:
+3.Copy the code given below in your AndroidManifest.xml
 
 
-Add permissions 
 ```
- <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+								 //Add Android Permissions
+		    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission
+													android:name="android.permission.ACCESS_NETWORK_STATE">
+    </uses-permission>
+    <uses-permission
+													android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+    <uses-permission
+													android:name="android.permission.ACCESS_COARSE_LOCATION">
+    </uses-permission>
+	
+    //Add Android Activities
+    <activity
+													android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity"
+													android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize">
+    </activity>
+    <activity
+													android:name="com.shephertz.android.apphype.sdk.VideoAdActivity"
+													android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"
+													android:screenOrientation="landscape">
+    </activity>
+	
+    //Add Android Receiver
+    <receiver
+													android:name="com.shephertz.android.apphype.sdk.AppHypeReceiver">
+        <intent-filter>
+            <data android:scheme="package" />
+            <action android:name="android.intent.action.PACKAGE_ADDED" />
+        </intent-filter>
+    </receiver>
 ```
 
-Add Activities
 
-```
-  <activity android:name="com.shephertz.android.apphype.sdk.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
-        <activity android:name="com.shephertz.android.apphype.sdk.VideoAdActivity" android:screenOrientation="landscape"
-             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
-```
-Add Receiver
-
-```
- <receiver android:name="com.shephertz.android.apphype.sdk.AppHypeReceiver">
-            <intent-filter>
-                <data android:scheme="package"/>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-            </intent-filter>
-        </receiver>
-```
-
-__4 Intialize AppHype__ Initialize AppHype SDK with the application Keys of the App in which you are cross promoting got in step 5.
+4. Initialize AppHype SDK with the application Keys of the App in which you are cross promoting
 ```
 AppHype
 			.intialize(
@@ -70,33 +80,33 @@ AppHype
 					"Apphype Secret Key");
 ```
 
-__5 Enable Logs__ While integrating AppHype Sdk you can also enable Sdk logs.
+5. To enable logs in application
 
 ```
 AppHype.enableLogs();
 
 ```
-__6 Set AppHypeListener__ AppHype allow to handle callback event by adding AppHypeListener.
+6. To handle callBack events from AppHype SDK developer should set AppHypeListener
 
 ```
 AppHype.setAppHypeListener(appHypeLister);
 
 ```
 
-__7 Restrict Ad in Application__ You can also set maximum no. of application launch till you don’t want any Ad. This is an interesting feature to engage users in your app.
+7. Developer can put restrictions on when to show ads in App(s)
 ```
 AppHype.restrictAd(restricLaunch);
 
 ```
 
-__8 LoadAd__ You can request Ad by using the following code.
+8. To show ads in application, developer has to preLoad them e.g Video or Interstitial
 
 ```
 AppHype.preLoadAd(AdCode.Interstitial);
 AppHype.preLoadAd(AdCode.Video);
 
 ```
-__9 ShowAd__ If you want to show it on an event then you can use the following code.
+9. Developer can show ads in application only if, they are available.
 
 ```
   if(AppHype.isAvailable(AdCode.Interstitial))
@@ -105,7 +115,7 @@ __9 ShowAd__ If you want to show it on an event then you can use the following c
 		AppHype.showAd(activity,AdCode.Video);
 				
 ```
-__10 CloseAd__  If you want to close this by using Api you can use following code.
+10. Developer can close Ad with API as well
 
 ```
 
@@ -114,7 +124,7 @@ __10 CloseAd__  If you want to close this by using Api you can use following cod
 ```
 
 			
-__11 Handling AppHype Callback Events__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
+_11. If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
