@@ -1,8 +1,6 @@
 AppHypeSDK
 ==========
 
-# About AppHype Ad SDK Version 1.0
-
 1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads
 2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see
 3. Offers a solution to the Advertiser by showcasing their Ads to an app user
@@ -28,9 +26,11 @@ AppHypeSDK
 
 
 
-__1 Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)__
+1. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
 
-__2 Add apphype.jar and android-support-v4.jar in your application__
+2. Add apphype.jar and android-support-v4.jar in your application
+
+3. In AndroidManifest.xml file, package name of your App and the App added on AppHype in which you wish to cross promote should be same
 
 __3 Modify Android Manifest__ Change Your Application Package with your application package in AndroidManifest.xml file created in step 4 also add:
 
