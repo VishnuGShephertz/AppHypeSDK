@@ -3,34 +3,34 @@ AppHypeSDK
 
 # About AppHype Ad SDK Version 1.0
 
-1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads.
-2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see.
-3. Offers a solution to the Advertiser by showcasing their Ads to an app user.
-4. Read complete [API Documentation](http://apphype.shephertz.com/docs) on AppHype Ad Network Guide.
-5. A complete [Turtorial](http://apphype.shephertz.com/tutorial-android), How you can integrate it in your Existing Android Application.
+1. Opens an easy gateway for Android developers to serve a quality Video & FullScreen Ads
+2. Leads a developer to earn stacks of money by serving a targeted ad that a user wants to see
+3. Offers a solution to the Advertiser by showcasing their Ads to an app user
+4. Read complete [API Documentation](http://apphype.shephertz.com/docs) on AppHype Ad Network Guide
+5. A complete [Turtorial](http://apphype.shephertz.com/tutorial-android), How you can integrate it in your Existing Android Application
 
 # Running Ad Sample
 
-1. [Register/Login](http://apphype.shephertz.com/login) with AppHype Ad Network.
-2. After signing up, Create your app that you want to promote by entering your app's package name to the [Create App](http://apphype.shephertz.com/app/apps#/addApp) page.
-3. Now You can create Cross Promo Campaign of this App to promote it in Other App.Create [Cross Promotion Campaign](http://apphype.shephertz.com/app/apps#/createPromo) page. 
-4. Create your App(s) by entering the name of your App's package to [Create App](http://apphype.shephertz.com/app/apps#/addApp) page.
-5. Now you can get Your [Application Keys](http://apphype.shephertz.com/app/apps#/all) on By clicking Key of app, that are require for Ad SDK integration.
-6. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip) with Sample Application.
-7. Import Sample Application in Your IDE e.g Eclipse.
-8. Change Sample Application Package with your application package in AndroidManifest.xml file created in step 4. 
-9. Put your API as well as Secret Key in SampleAppActivity.java file,generated in step 5 at line no 24..
+1. [Register/Login](http://apphype.shephertz.com/login) to use AppHype.
+2. After signing up, create App(s) that you want to promote by submitting App's package name on  [Create App ](http://apphype.shephertz.com/app/apps#/addApp)page.
+3. Create [Cross Promotion Campaign ](http://apphype.shephertz.com/app/apps#/createPromo)of the added App(s) to promote it in other App(s) 
+4. Now, create another App(s) by adding it on [Create App ](http://apphype.shephertz.com/app/apps#/addApp)in which you wish to cross promote
+5. You will get [Application Keys](http://apphype.shephertz.com/app/apps#/all) after App creation for SDK integration, which will be needed to initialize AppHype SDK
+6. Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip) with Sample Application
+7. Import sample application in your IDE e.g Eclipse
+8. Change package name of Sample Application with your application package name created in step 4 
+9. Put your API and Secret Key of the App created in step 4 in SampleAppActivity.java file, generated in step 5 at line no 24
 
-10. Build your Android Application and run it on your device.
-11. By Clicking Load button of sample application, you are able to get Ad of App that campaign create in step 3.
+10. Build your Android application and install it in your device
+11. Click on Load button of sample application, you will get the ad of the App(s) created in step 2
 
-# Android AppHype SDK Integration
+# To use AppHype SDK in existing Android Application
 
 
 
 __1 Download  AppHype Android [SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)__
 
-__2 Add apphype.jar and android-support-v4.jar in your__
+__2 Add apphype.jar and android-support-v4.jar in your application__
 
 __3 Modify Android Manifest__ Change Your Application Package with your application package in AndroidManifest.xml file created in step 4 also add:
 
@@ -61,7 +61,7 @@ Add Receiver
         </receiver>
 ```
 
-__4 Intialize AppHype__ At your Launcher Activty intialize AppHype SDK by providing your Api and Secret key got in step 5.
+__4 Intialize AppHype__ Initialize AppHype SDK with the application Keys of the App in which you are cross promoting got in step 5.
 ```
 AppHype
 			.intialize(
