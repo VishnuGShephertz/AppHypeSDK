@@ -26,13 +26,13 @@ AppHypeSDK
 
 
 
-1. Download  [AppHype Android SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
+__1.__ Download  [AppHype Android SDK] (https://github.com/VishnuGShephertz/AppHypeSDK/tree/AppHype-Version-1.0/archive/master.zip)
 
-2. Add apphype.jar and android-support-v4.jar in your application
+__2.__ Add apphype.jar and android-support-v4.jar in your application
 
-3. In AndroidManifest.xml file, package name of your App and the App added on AppHype in which you wish to cross promote should be same
+__3.__ In AndroidManifest.xml file, package name of your App and the App added on AppHype in which you wish to cross promote should be same
 
-3.Copy the code given below in your AndroidManifest.xml
+__4.__Copy the code given below in your AndroidManifest.xml
 
 
 ```
@@ -58,38 +58,38 @@ AppHypeSDK
 ```
 
 
-4. Initialize AppHype SDK with the application Keys of the App in which you are cross promoting
+__5.__ Initialize AppHype SDK with the application Keys of the App in which you are cross promoting
 ```
 AppHype.intialize("Android application context","Apphype Api Key","Apphype Secret Key");
 ```
 
-5. To enable logs in application
+__6.__ To enable logs in application
 
 ```
 AppHype.enableLogs();
 
 ```
-6. To handle callBack events from AppHype SDK developer should set AppHypeListener
+__7.__ To handle callBack events from AppHype SDK developer should set AppHypeListener
 
 ```
 AppHype.setAppHypeListener(appHypeLister);
 
 ```
 
-7. Developer can put restrictions on when to show ads in App(s)
+__8.__ Developer can put restrictions on when to show ads in App(s)
 ```
 AppHype.restrictAd(restricLaunch);
 
 ```
 
-8. To show ads in application, developer has to preLoad them e.g Video or Interstitial
+__9.__ To show ads in application, developer has to preLoad them e.g Video or Interstitial
 
 ```
 AppHype.preLoadAd(AdCode.Interstitial);
 AppHype.preLoadAd(AdCode.Video);
 
 ```
-9. Developer can show ads in application only if, they are available.
+__10.__ Developer can show ads in application only if, they are available.
 
 ```
   if(AppHype.isAvailable(AdCode.Interstitial))
@@ -98,14 +98,14 @@ AppHype.preLoadAd(AdCode.Video);
 		AppHype.showAd(activity,AdCode.Video);
 				
 ```
-10. Developer can close Ad with API as well
+__11.__ Developer can close Ad with API as well
 
 ```
 	AppHype.closeAd();
 ```
 
 			
-_11. If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
+__12.__ If you want to track an event or a message from SDK, you can add AppHypeLisener and gets callBack in following method.
 ``` 
     public interface AppHypeListener
    //Callback when Ad is shown
