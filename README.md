@@ -32,7 +32,7 @@ __2.__ Add apphype.jar and android-support-v4.jar in your application
 
 __3.__ In AndroidManifest.xml file, package name of your App and the App added on AppHype in which you wish to cross promote should be same
 
-__4.__Copy the code given below in your AndroidManifest.xml
+__4.__ Copy the code given below in your AndroidManifest.xml
 
 
 ```
