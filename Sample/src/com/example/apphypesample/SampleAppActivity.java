@@ -85,7 +85,7 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		else if(adcode==AdCode.Video)
 			message+="Video Ad is Available";
 		displayMessage(message);
-		//displayAd();
+		displayAd();
 	}
 
 	@Override
