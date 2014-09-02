@@ -26,7 +26,7 @@ public class SampleAppActivity extends Activity implements AppHypeListener {
 		setContentView(R.layout.activity_main);
 		adStatus=(TextView)findViewById(R.id.ad_Status);
 		AppHype.setAppHypeListener(this);
-		AppHype.intialize(this, "538b7d5969776e277585e9c7c934ccdfab728a61f59f15a09c2adffced1c6790", "57ff0b68f9b9c56772c76e873b7bc49155b7fd5d9799878e0166625235a64912");
+		AppHype.intialize(this, "Your AppHype API Key", "Your AppHype Secret Key");
 		AppHype.enableLogs();
 		adStatus.setText("intializing.....AppHype");
 	}
